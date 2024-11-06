@@ -1,0 +1,772 @@
+/* google fonts */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+* {
+    font-family: "Poppins", sans-serif;
+    margin: 0;
+    padding: 0px;
+    scroll-behavior: smooth;
+    box-sizing: border-box;
+    list-style: none;
+    text-decoration: none;
+    scroll-padding-top: 2rem;
+}
+
+
+/* variables */
+
+:root {
+    --main-color: #dd9454;
+    --dark-color: #1b182b;
+    --light-color: #322f40;
+    --text-color: hsl(0,0%,91%);
+    /* --main-color: #fa5353;
+    --dark-color: #1b182b;
+    --light-color: #322f40;
+    --text-color: hsl(0,0%,91%); */
+}
+
+::selection {
+    color: var(--text-color);
+    background: var(--main-color);
+}
+
+section {
+    padding: 4rem 0 3rem;
+}
+
+img {
+    width: 100%;
+}
+
+body {
+    color: var(--text-color);
+    background: var(--dark-color);
+}
+
+.container {
+    max-width: 1068px;
+    margin: auto;
+    width: 100%;
+}
+/* Header */
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: var(--dark-color);
+    z-index: 100;
+}
+
+/* navigation */
+
+.nav   {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 16px 0;
+}
+
+/* logo */
+/* Margin navigation spacing */
+.logo {
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: var(--text-color);
+    text-transform: uppercase;
+    margin: 0 auto 0 0;
+
+}
+
+.logo span {
+    color: var(--main-color);
+}
+/* Nabeel */
+
+.Nabeel {
+    position: absolute;
+    top: 2;
+    color: rgb(230, 193, 102);
+    background: var(--light-color);
+    padding: 10px;
+    border-radius: 0.5rem;
+    z-index: 200;
+}
+.Nabeel:hover {
+    font-weight: 700;
+    font-size: 1.1rem;
+    transition: 0.15s;
+}
+
+
+/* Navigation icons */ 
+.nav-icons {
+    display: flex;
+    align-items: center;
+    column-gap: 1rem;
+}
+/* Grid used  */
+.nav-icons .bx {
+    font-size: 20px;
+    height: 44px;
+    width: 44px;
+    display: grid;
+    place-items: center;
+    color: var(--text-color);
+    background: var(--light-color);
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+/* Bell icon */
+/* relative => adjustable within the layout */
+
+#bell-icon {
+    position: relative;
+}
+/* position: absolute; is a CSS property that removes an element from the normal document flow and assigns it to its containing block. It then positions the element relative to its nearest positioned ancestor or the initial containing block (the HTML element). */
+#bell-icon span {
+    content: '';
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: var(--main-color);
+    position: absolute;
+    top: 10px;
+    right: 14px;
+}
+/* menu icon z-index: 200; is a CSS property that specifies the stacking order of an element relative to other elements. It determines which element appears on top of others when they overlap.
+
+Key points:*/
+.menu-icon  {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    row-gap: 5px;
+    height: 44px;
+    width: 44px;
+    border-radius: 50%;
+    background: var(--light-color);
+    cursor: pointer;
+    z-index: 200;
+    transition: 0.3s;
+}
+/* menu icon bars */
+.menu-icon div{
+    background: var(--text-color);
+    display: block;
+    height: 1px;
+    width: 25px;
+    transition: 0.3s;
+}
+/* additional graphics for JS */
+
+.move .line1 {
+    transform: rotate(-45deg) translate(-5px,5px);
+}
+
+.move .line2 {
+    opacity: 0;
+}
+
+.move .line3 {
+    transform: rotate(45deg) translate(-5px,-5px);
+}
+
+/* Menu Styling */
+
+.menu {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100vh;
+    background: rgba(0, 0, 14, 0.9);
+    z-index: 106;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    transition: 0.5s;
+    clip-path: circle(0% at 100% 0%);
+}
+
+.menu.active {
+    clip-path: circle(144% at 100% 0%);
+}
+.menu.deactive {
+    clip-path: circle(0% at 100% 0%);
+}
+
+.menu img {
+    width: 700px;
+}
+
+.navbar {
+    display: grid;
+    row-gap: 1.5rem;
+    text-align: right;
+    padding-right: 2rem;
+}
+
+.navbar a {
+    font-size: 1.6rem;
+    color: var(--text-color);
+    font-weight: 500;
+    transition: 0.2s;
+
+}
+
+.navbar a:hover {
+    border-bottom: 4px solid var(--main-color);
+    font-weight: 900;
+    font-size: 1.8rem;
+}
+
+/* Notification-section */
+
+.notification {
+    position: absolute;
+    top: 110%;
+    right: 4rem;
+    background: var(--light-color);
+    width: 300px;
+    height: 350px;
+    border-radius: 0.5rem;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    row-gap: 1rem;
+    clip-path: circle(0% at 100% 0%);
+}
+
+.notification.active {
+    clip-path: circle(144% at 100% 0%);
+    transition: 0.17s;
+}
+
+.notification-box {
+    display: flex;
+    align-items: baseline;
+    column-gap: 1rem;
+    border-radius: 0.5rem;
+    background: var(--dark-color);
+    padding: 10px;
+}
+
+.notification-box .bx {
+    color: #faf102;
+}
+
+.box-color {
+    background: hsl(0, 0%, 100%, 0.4);
+}
+
+.box-color .bx {
+    color: var(--main-color);
+}
+
+/* Home-section */
+
+.home {
+    position: relative;
+    min-height: 450px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    margin-top: 5rem;
+}
+
+.home img {
+    position: absolute;
+    padding: 10px;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 1.4rem;
+    z-index: -1;
+}
+
+.home-text {
+    padding-right: 4rem;
+    text-align: right;
+}
+
+.home-text h1 {
+    font-size: 2.4rem;
+    text-transform: uppercase;
+    color: var(--dark-color);
+    margin-bottom: 1rem;
+}
+
+.btn {
+    background: var(--main-color);
+    padding: 15px 20px;
+    color: var(--text-color);
+    text-transform: uppercase;
+    font-size: 1rem;
+    letter-spacing: 1px;
+    font-weight: 500;
+    clip-path: polygon(0 0, 100% 0%, 100% 100%, 10% 100%, 0% 68%);
+}
+
+.btn:hover {
+    background: var(--light-color);
+    transition: 0.2s all linear;
+    
+}
+
+/* Heading trending */
+.heading {
+    display: flex;
+    align-items: center;
+    column-gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.heading .bx {
+    font-size: 21px;
+    color: var(--text-color);
+    background: var(--main-color);
+    border-radius: 5rem;
+    padding: 10px;
+
+}
+
+.heading h2 {
+    font-size: 1rem;
+    font-weight: 500;
+
+
+}
+
+/* Trending-section boxes */
+.box {
+    position: relative;
+    width: 100%;
+    height: 350px;
+    border-radius: 0.5rem;
+}
+
+.box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 0.5rem;
+}
+.box .box-text {
+    position: absolute;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    padding: 10px;
+    margin: 1px;
+    background: hsl(227, 14%, 20%,0.8);
+    backdrop-filter: blur(4px);
+    border-radius: 0.5rem;
+}
+
+.box .box-text h2 {
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+.box .box-text h3{
+    font-size: 0.9rem;
+    font-weight: 400;
+    margin-bottom: 0.8rem;
+}
+
+.rating-download {
+    display: flex;
+    justify-content: space-between;
+}
+.rating {
+    display: flex;
+    align-items: center;
+    column-gap: 4px;
+    background: hsl(0, 0%, 100%, 0.4);
+    padding: 4px 10px;
+    border-radius: 0.5rem;
+}
+
+.rating .bx {
+    color: #faf102;
+    font-size: 0.9rem;
+}
+.rating span {
+    color: #faf102;
+    font-size: 0.9rem;
+}
+
+.box-btn .bx{
+    padding: 8px;
+    background: var(--text-color);
+    border-radius: 5rem;
+    color: var(--main-color);
+    font-weight: 400;
+    font-size: 20px;
+}
+.box-btn .bx:hover {
+    background: var(--dark-color);
+    transition: 0.2s;
+}
+
+/* New Section */
+
+.new-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(240px,auto));
+    gap: 1.2rem;
+
+}
+
+.next-page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 3rem;
+}
+.next-page a {
+    background: var(--main-color);
+    padding: 12px 20px;
+    color: var(--text-color);
+    letter-spacing: 1px;
+    font-weight: 500;
+}
+.next-page a:hover {
+    background: var(--light-color);
+    transition: 0.25s;
+}
+
+.copyright {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+}
+.copyright p {
+    font-size: 0.9rem;
+    color: var(--text-color);
+}
+.copyright h3 {
+    font-weight: 600;
+    color: var(--light-color);
+    background: var(--dark-color);
+    border-radius: 0.5rem;
+}
+
+/* Download section */
+.video-container {
+    margin-top: 5rem;
+}
+.video-container video{
+    width: 100%;
+    aspect-ratio: 16/9;
+}
+
+/* About-section */
+.about {
+    margin-top: 2rem;
+
+}
+.about h2 {
+    display: inline-flex;
+    font-size: 1.4rem;
+    font-weight: 500;
+    border-bottom: 4px solid var(--main-color);
+}
+.about p {
+    font-size: 0.938rem;
+    margin-top: 1rem;
+    text-align: justify;
+}
+/* Screenshot-section */
+
+.screenshots h2 {
+    display: inline-flex;
+    font-size: 1.4rem;
+    font-weight: 500;
+    border-bottom: 4px solid var(--main-color);
+    margin: 1.6rem 0;
+
+}
+.screenshots-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(240px,auto));
+    gap: 1.2rem;
+    justify-content: center;
+    max-width: 800px;
+    margin: auto;
+    width: 100%;
+
+}
+.screenshots-content img {
+    width: 100%;
+    height: 440px;
+    object-fit: cover;
+}
+
+/* download links section */
+
+.download {
+    max-width: 800px;
+    margin: auto;
+    width: 100%;
+    display: grid;
+    justify-content: center;
+    margin-top: 2rem;
+}
+
+.download h2 {
+    text-align: center;
+    font-size: 1.4rem;
+    font-weight: 500;
+    margin: 1.6rem 0;
+}
+
+.download-links {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    margin-bottom: 2rem;
+
+}
+.download-links a {
+    text-align: center;
+    background: var(--main-color);
+    padding: 12px 20px;
+    color: var(--text-color);
+    letter-spacing: 1px;
+    font-weight: 500;
+}
+.download-links a:hover {
+    background: var(--light-color);
+    transition: 0.25s;
+}
+
+/* display block for default scroll bar */
+
+html::-webkit-scrollbar{
+    display: none;
+
+}
+/* Custom scroll bar designing */
+.progress {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    z-index: 300;
+    
+}
+
+.progress-bar {
+    height: 4px;
+    background: var(--main-color);
+    width: 0%;
+
+}
+
+/* Making responsive Breakpoints */
+/* for sizing of the container */
+@media (max-width:1080px){
+    .container {
+        margin: 0 auto;
+        width: 95%;
+    }
+    .nav {
+        padding: 10px 0;
+    }
+    .notification {
+        right: 4rem;
+    }
+    .menu img {
+        width: 500px;
+    }
+    section {
+        padding: 3rem 0 2rem;
+    }
+    .home {
+        min-height: 440px;
+        margin-top: 4rem !important;
+    }
+    .home img {
+        border-radius: 1rem;
+    }
+    .new-content {
+        grid-template-columns: repeat(auto-fit, minmax(200px, auto));
+    }
+    .video-container video {
+        margin-top: 5rem !important;
+    }
+}
+
+/* For medium devices */
+@media (max-width:768px) {
+    .notification {
+        right: 1rem;
+    }
+    .menu img {
+        width: 600px;
+    }
+    .home {
+        min-height: 338px;
+    }
+    .new-content {
+        grid-template-columns: repeat(auto-fit, minmax(190px, auto));
+    }
+    .home-text h1 {
+        font-size: 1.8rem;
+    }
+    .btn {
+        padding: 10px 15px;
+        font-size: 0.9rem;
+    }
+    .screenshots-content {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 300px));
+    }
+}
+/* for low end */
+
+@media (max-width:550px) {
+    .menu img {
+        display: none;
+    }
+    .home img {
+        border-radius: 2rem;
+    }
+    .notification {
+        right: 1rem;
+    }
+    .home-text h1 {
+        font-size: 3.4rem;
+        margin-bottom: 3rem;
+    }
+    .btn {
+        font-size: 2rem;
+    }
+    .menu {
+        justify-content: flex-end;
+    }
+    .new-content {
+        grid-template-columns: repeat(auto-fit, minmax(400px, 180px));
+        margin: auto;
+        padding: 20px 50px;
+    }
+    .home {
+        min-height: 939px;
+        margin-top: 5rem !important;
+    }
+    .nav {
+        padding: 50px 0;
+    }
+    .Nabeel {
+        font-size: 1.8rem;
+    }
+    .logo {
+        font-size: 1.8rem;
+    }
+    .nav-icons {
+        column-gap: 2rem;
+    }
+    .heading h2 {
+        font-size: 2rem;
+        font-weight: 500;
+    }
+    .next-page a {
+        font-size: 2rem;
+    }
+    .box-btn .bx {
+        font-size: 40px;
+    }
+    .rating .bx {
+        color: #faf102;
+        font-size: 1.9rem;
+    }
+    .rating span {
+        color: #faf102;
+        font-size: 1.9rem;
+    }
+    .box .box-text h2 {
+        font-size: 1.8rem;
+        font-weight: 500;
+    }
+    .box .box-text h3 {
+        font-size: 1rem;
+    }
+    .notification {
+        right: 1rem;
+        top: 8rem;
+    }
+    .notification {
+        width: 400px;
+        height: 450px;
+    }
+    .screenshots h2 {
+         font-size: 2.4rem;
+    }
+    .about h2 {
+        display: inline-flex;
+        font-size: 2.4rem;
+        font-weight: 500;
+        border-bottom: 4px solid var(--main-color);
+    }
+    .download-links a {
+        text-align: center;
+        background: var(--main-color);
+        padding: 12px 20px;
+        color: var(--text-color);
+        letter-spacing: 1px;
+        font-weight: 500;
+        font-size: 1.8rem;
+    }
+    .screenshots-content img {
+        height: 640px; 
+    }
+    .nav-icons .bx,
+    .menu-icon {
+        height: 40px;
+        width: 40px;
+    }
+
+}
+
+/* for small devices */
+@media (max-width:360px){
+    .logo {
+        font-size: 1.2rem;
+
+    }
+    .navbar a {
+        font-size: 1.3rem;
+    }
+    .navbar a:hover {
+        font-size: 1.4rem;
+    }
+    .notification {
+        width: 270px;
+    }
+    .home {
+        min-height: 214px;
+    }
+    .home-text h1 {
+        font-size: 1.4rem;
+    }
+    .heading .bx {
+        padding: 8px;
+    }
+    .heading h2 {
+        font-size: 1.1rem;
+    }
+    .box {
+        height: 420px;
+    }
+    .about h2,
+    .screenshots h2 .download h2{
+        font-size: 1.2rem;
+
+    }
+
+}
